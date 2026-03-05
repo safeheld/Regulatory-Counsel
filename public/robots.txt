@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /studio
+Disallow: /api/
+
+# Host
+Host: https://www.regulatorycounsel.co.uk
+
+# Sitemaps
+Sitemap: https://www.regulatorycounsel.co.uk/sitemap.xml
