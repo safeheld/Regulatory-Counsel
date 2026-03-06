@@ -12,25 +12,37 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         navy: {
-          DEFAULT: "#1B2B5E",
-          light: "#253A7C",
-          dark: "#111D42",
-          deep: "#0F1F3D",
+          DEFAULT: "#0C1C35",
+          light: "#162D4F",
+          dark: "#081526",
+          deep: "#060F1D",
         },
-        accent: "#2563EB",
-        offwhite: "#F7F8FA",
+        gold: {
+          DEFAULT: "#B8922A",
+          light: "#D4AD3E",
+          muted: "#C9A94E",
+        },
+        cream: "#F7F4EF",
+        accent: "#B8922A",
       },
-      fontSize: {
-        "display": ["4.5rem", { lineHeight: "1.1", fontWeight: "700" }],
-        "display-mobile": ["2.5rem", { lineHeight: "1.1", fontWeight: "700" }],
-        "h2": ["3rem", { lineHeight: "1.15", fontWeight: "700" }],
-        "h2-mobile": ["2rem", { lineHeight: "1.2", fontWeight: "700" }],
-        "body-lg": ["1.125rem", { lineHeight: "1.7" }],
+      fontFamily: {
+        serif: ["var(--font-cormorant)", "Cormorant Garamond", "Georgia", "serif"],
+        sans: ["var(--font-figtree)", "Figtree", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        "card": "0 1px 3px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.06)",
-        "card-hover": "0 4px 12px rgba(0,0,0,0.08), 0 12px 28px rgba(0,0,0,0.1)",
-        "nav": "0 1px 3px rgba(0,0,0,0.08)",
+        card: "0 1px 3px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.06)",
+        "card-hover":
+          "0 4px 12px rgba(0,0,0,0.08), 0 16px 32px rgba(0,0,0,0.1)",
+        nav: "0 1px 3px rgba(0,0,0,0.06)",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 30s linear infinite",
       },
     },
   },

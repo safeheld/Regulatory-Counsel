@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cormorant_Garamond, Figtree } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,9 +7,19 @@ import CookieBanner from "@/components/CookieBanner";
 import Analytics from "@/components/Analytics";
 import { organizationJsonLd } from "@/lib/jsonLd";
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
+  variable: "--font-cormorant",
+});
+
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-figtree",
 });
 
 const SITE_URL = "https://www.regulatorycounsel.co.uk";
@@ -57,8 +67,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={`${cormorant.variable} ${figtree.variable}`}>
+      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -3,36 +3,36 @@ import { contactInfo } from "@/lib/navigation";
 
 export default function ContactStrip() {
   return (
-    <section className="bg-navy py-24 lg:py-28">
+    <section className="py-24 lg:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-h2-mobile lg:text-h2 text-white mb-5">
-          Ready to discuss your regulatory requirements?
+        <h2 className="font-serif text-[2rem] lg:text-[3rem] font-bold text-navy leading-[1.15] mb-6">
+          Ready to launch your financial services business?
         </h2>
-        <p className="text-body-lg text-white/60 mb-10 max-w-xl mx-auto">
+        <p className="text-[17px] text-gray-500 leading-relaxed mb-10 max-w-xl mx-auto">
           Get in touch to discuss how we can support your regulatory and
           compliance needs.
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-accent text-white px-8 py-4 rounded text-base font-semibold hover:bg-blue-700 transition-colors"
+          className="inline-block bg-navy text-white px-9 py-4 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
         >
-          Speak to Our Team
+          Speak to an Expert
         </Link>
-        <p className="text-white/40 text-sm mt-8">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-[14px] text-gray-400">
           <a
             href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
-            className="hover:text-white/70 transition-colors"
+            className="hover:text-navy transition-colors"
           >
             {contactInfo.phone}
           </a>
-          {"  "}|{"  "}
+          <span className="hidden sm:inline text-gray-300">|</span>
           <a
             href={`mailto:${contactInfo.email}`}
-            className="hover:text-white/70 transition-colors"
+            className="hover:text-navy transition-colors"
           >
             {contactInfo.email}
           </a>
-        </p>
+        </div>
       </div>
     </section>
   );

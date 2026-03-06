@@ -4,18 +4,19 @@ import { sectors, services, contactInfo } from "@/lib/navigation";
 export default function Footer() {
   return (
     <footer className="bg-navy-deep text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
-          {/* Company Info */}
+          {/* Brand + Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-5 tracking-[-0.01em]">
-              Regulatory Counsel
-            </h3>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Expert regulatory and compliance consulting for financial
-              services firms across the UK.
-            </p>
-            <div className="space-y-3 text-sm text-white/60">
+            <Link href="/" className="inline-block mb-6">
+              <span className="font-serif text-[22px] font-bold text-white block leading-tight">
+                Regulatory Counsel
+              </span>
+              <span className="text-[11px] text-gold tracking-[0.12em] uppercase">
+                Global Regulatory Advisory
+              </span>
+            </Link>
+            <div className="space-y-3 text-sm text-white/40">
               <p>{contactInfo.address}</p>
               <p>
                 <a
@@ -38,7 +39,7 @@ export default function Footer() {
 
           {/* Sectors */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-white/40 mb-5">
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/30 mb-6">
               Sectors
             </h4>
             <ul className="space-y-3">
@@ -46,7 +47,7 @@ export default function Footer() {
                 <li key={sector.href}>
                   <Link
                     href={sector.href}
-                    className="text-white/60 hover:text-white text-[14px] transition-colors"
+                    className="text-white/50 hover:text-white text-[14px] transition-colors"
                   >
                     {sector.name}
                   </Link>
@@ -57,7 +58,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-white/40 mb-5">
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/30 mb-6">
               Services
             </h4>
             <ul className="space-y-3">
@@ -65,7 +66,7 @@ export default function Footer() {
                 <li key={service.href}>
                   <Link
                     href={service.href}
-                    className="text-white/60 hover:text-white text-[14px] transition-colors"
+                    className="text-white/50 hover:text-white text-[14px] transition-colors"
                   >
                     {service.name}
                   </Link>
@@ -74,57 +75,39 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* Company */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-white/40 mb-5">
+            <h4 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/30 mb-6">
               Company
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link
-                  href="/about"
-                  className="text-white/60 hover:text-white text-[14px] transition-colors"
-                >
+                <Link href="/about" className="text-white/50 hover:text-white text-[14px] transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/insights"
-                  className="text-white/60 hover:text-white text-[14px] transition-colors"
-                >
+                <Link href="/insights" className="text-white/50 hover:text-white text-[14px] transition-colors">
                   Insights
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="text-white/60 hover:text-white text-[14px] transition-colors"
-                >
+                <Link href="/contact" className="text-white/50 hover:text-white text-[14px] transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/privacy-policy"
-                  className="text-white/60 hover:text-white text-[14px] transition-colors"
-                >
+                <Link href="/privacy-policy" className="text-white/50 hover:text-white text-[14px] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/terms"
-                  className="text-white/60 hover:text-white text-[14px] transition-colors"
-                >
+                <Link href="/terms" className="text-white/50 hover:text-white text-[14px] transition-colors">
                   Terms of Business
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/cookies"
-                  className="text-white/60 hover:text-white text-[14px] transition-colors"
-                >
+                <Link href="/cookies" className="text-white/50 hover:text-white text-[14px] transition-colors">
                   Cookie Policy
                 </Link>
               </li>
@@ -134,9 +117,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/[0.08]">
+      <div className="border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-white/30">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] text-white/25">
             <p>
               &copy; {new Date().getFullYear()} {contactInfo.company}. All
               rights reserved.
