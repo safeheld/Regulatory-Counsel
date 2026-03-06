@@ -5,13 +5,13 @@ interface PageHeroProps {
 
 export default function PageHero({ title, subtitle }: PageHeroProps) {
   return (
-    <section className="bg-navy text-white py-16 lg:py-20">
+    <section className="bg-navy text-white py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
+        <h1 className="text-display-mobile lg:text-display max-w-4xl">
           {title}
         </h1>
         {subtitle && (
-          <p className="text-xl text-gray-300 max-w-3xl">{subtitle}</p>
+          <p className="text-body-lg text-white/60 max-w-2xl mt-6">{subtitle}</p>
         )}
       </div>
     </section>

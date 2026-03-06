@@ -3,37 +3,35 @@ import { contactInfo } from "@/lib/navigation";
 
 export default function ContactStrip() {
   return (
-    <section className="bg-blue-600 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold mb-4">
-          Speak to Our Team
+    <section className="bg-navy py-24 lg:py-28">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-h2-mobile lg:text-h2 text-white mb-5">
+          Ready to discuss your regulatory requirements?
         </h2>
-        <p className="text-lg text-white mb-8 max-w-2xl mx-auto">
+        <p className="text-body-lg text-white/60 mb-10 max-w-xl mx-auto">
           Get in touch to discuss how we can support your regulatory and
           compliance needs.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-          <Link
-            href="/contact"
-            className="bg-white text-navy px-8 py-3 rounded font-semibold hover:bg-gray-100 transition-colors"
-          >
-            Contact Us
-          </Link>
+        <Link
+          href="/contact"
+          className="inline-block bg-accent text-white px-8 py-4 rounded text-base font-semibold hover:bg-blue-700 transition-colors"
+        >
+          Speak to Our Team
+        </Link>
+        <p className="text-white/40 text-sm mt-8">
           <a
             href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
-            className="border-2 border-white text-white px-8 py-3 rounded font-semibold hover:bg-white/10 transition-colors"
+            className="hover:text-white/70 transition-colors"
           >
             {contactInfo.phone}
           </a>
-        </div>
-        <p className="text-white text-sm">
+          {"  "}|{"  "}
           <a
             href={`mailto:${contactInfo.email}`}
-            className="underline"
+            className="hover:text-white/70 transition-colors"
           >
             {contactInfo.email}
           </a>
-          {" "}  |  {contactInfo.address}
         </p>
       </div>
     </section>

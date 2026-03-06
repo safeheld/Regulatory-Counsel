@@ -42,11 +42,11 @@ function FAQItem({ faq, open, toggle }: { faq: FAQ; open: boolean; toggle: () =>
     <div className="border-b border-gray-200">
       <button
         onClick={toggle}
-        className="w-full flex justify-between items-center py-5 text-left gap-4"
+        className="w-full flex justify-between items-center py-6 text-left gap-4"
       >
-        <span className="text-lg font-semibold text-navy">{faq.question}</span>
+        <span className="text-lg font-bold text-navy">{faq.question}</span>
         <svg
-          className={`w-5 h-5 text-navy shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`w-5 h-5 text-accent shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -55,8 +55,8 @@ function FAQItem({ faq, open, toggle }: { faq: FAQ; open: boolean; toggle: () =>
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      <div className={`overflow-hidden transition-all ${open ? "max-h-[600px] pb-5" : "max-h-0"}`}>
-        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+      <div className={`overflow-hidden transition-all ${open ? "max-h-[600px] pb-6" : "max-h-0"}`}>
+        <p className="text-gray-500 leading-relaxed text-body-lg">{faq.answer}</p>
       </div>
     </div>
   );
@@ -77,19 +77,20 @@ export default function ServiceLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqs)) }}
       />
+
       {/* ── 1. HERO ── */}
-      <section className="bg-navy text-white py-20 lg:py-28">
+      <section className="bg-navy text-white py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6">
+            <h1 className="text-display-mobile lg:text-display mb-7">
               {hero.headline}
             </h1>
-            <p className="text-lg lg:text-xl text-gray-300 leading-relaxed mb-8">
+            <p className="text-lg lg:text-xl text-white/[0.6] leading-relaxed mb-10 max-w-[500px]">
               {hero.sub}
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-blue-600 text-white px-9 py-4 rounded font-semibold text-lg hover:bg-blue-700 transition-colors"
+              className="inline-block bg-accent text-white px-8 py-4 rounded text-base font-semibold hover:bg-blue-700 transition-colors"
             >
               Speak to an Expert
             </Link>
@@ -98,16 +99,16 @@ export default function ServiceLayout({
       </section>
 
       {/* ── 2. WHAT WE DO (content slot) ── */}
-      <section className="py-16 lg:py-20">
+      <section className="py-24 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {content}
         </div>
       </section>
 
       {/* ── 3. SECTORS WE SERVE ── */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      <section className="py-24 lg:py-28 bg-offwhite">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl lg:text-3xl font-bold text-navy mb-8">
+          <h2 className="text-h2-mobile lg:text-h2 text-navy mb-10">
             Sectors We Serve
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -115,13 +116,13 @@ export default function ServiceLayout({
               <Link
                 key={sector.href}
                 href={sector.href}
-                className="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all group flex items-center justify-between"
+                className="bg-white p-7 rounded-xl border-2 border-gray-200 hover:border-accent hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group flex items-center justify-between"
               >
-                <span className="text-lg font-semibold text-navy group-hover:text-blue-600 transition-colors">
+                <span className="text-lg font-bold text-navy group-hover:text-accent transition-colors">
                   {sector.name}
                 </span>
                 <svg
-                  className="w-5 h-5 text-blue-600 shrink-0 group-hover:translate-x-1 transition-transform"
+                  className="w-5 h-5 text-accent shrink-0 group-hover:translate-x-1 transition-transform"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -136,9 +137,9 @@ export default function ServiceLayout({
       </section>
 
       {/* ── 4. FAQs ── */}
-      <section className="py-16 lg:py-20">
+      <section className="py-24 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl lg:text-3xl font-bold text-navy mb-10">
+          <h2 className="text-h2-mobile lg:text-h2 text-navy mb-12">
             Frequently Asked Questions
           </h2>
           <div className="border-t border-gray-200">
@@ -155,9 +156,9 @@ export default function ServiceLayout({
       </section>
 
       {/* ── 5. RELATED SERVICES ── */}
-      <section className="py-16 lg:py-20 bg-gray-50">
+      <section className="py-24 lg:py-28 bg-offwhite">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl lg:text-3xl font-bold text-navy mb-8">
+          <h2 className="text-h2-mobile lg:text-h2 text-navy mb-10">
             Related Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -165,12 +166,12 @@ export default function ServiceLayout({
               <Link
                 key={service.href}
                 href={service.href}
-                className="bg-white p-6 rounded-lg border-l-4 border-l-blue-600 border border-gray-200 hover:shadow-lg transition-all group"
+                className="bg-white p-7 rounded-lg border-l-[3px] border-l-accent shadow-card hover:shadow-card-hover transition-all duration-300 group"
               >
-                <h3 className="text-lg font-bold text-navy group-hover:text-blue-600 transition-colors mb-1">
+                <h3 className="text-lg font-bold text-navy group-hover:text-accent transition-colors mb-1.5">
                   {service.name}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-[14px] text-gray-500 leading-relaxed">
                   {service.description}
                 </p>
               </Link>
