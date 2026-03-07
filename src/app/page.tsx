@@ -124,21 +124,21 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="bg-white">
+      <section className="bg-warm-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[85vh]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[90vh]">
             {/* Left — Copy */}
-            <div className="flex flex-col justify-center py-20 lg:py-28 lg:pr-16">
-              <h1 className="font-serif text-[2.8rem] sm:text-[3.5rem] lg:text-[4.2rem] font-bold text-navy leading-[1.08] tracking-[-0.02em] mb-7">
+            <div className="flex flex-col justify-center py-24 lg:py-36 lg:pr-16">
+              <h1 className="font-serif text-[3.2rem] sm:text-[4rem] lg:text-[5rem] font-bold text-navy leading-[1.05] tracking-[-0.02em] mb-8">
                 Launch. <span className="italic text-gold">Regulate.</span> Grow.
               </h1>
-              <p className="text-[17px] lg:text-[18px] text-gray-500 leading-[1.75] max-w-[520px] mb-10">
+              <p className="text-[17px] lg:text-[18px] text-gray-500 leading-[1.8] max-w-[520px] mb-12">
                 We help entrepreneurs and businesses launch and operate regulated financial services, from licensing and compliance to full end-to-end regulatory support, across every major jurisdiction.
               </p>
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <Link
                   href="/contact"
-                  className="bg-navy text-white px-8 py-4 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
+                  className="bg-navy text-white px-9 py-4.5 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
                 >
                   Speak to an Expert
                 </Link>
@@ -169,14 +169,14 @@ export default function Home() {
 
       {/* ── STATS STRIP ── */}
       <section className="border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-serif text-[2.5rem] lg:text-[3rem] font-bold text-navy leading-none">
+                <p className="font-serif text-[3rem] lg:text-[3.5rem] font-bold text-navy leading-none">
                   {stat.value}
                 </p>
-                <p className="text-[12px] text-gray-400 mt-2 font-medium uppercase tracking-[0.12em]">
+                <p className="text-[12px] text-gray-400 mt-3 font-medium uppercase tracking-[0.12em]">
                   {stat.label}
                 </p>
               </div>
@@ -204,15 +204,15 @@ export default function Home() {
 
       {/* ── WHO WE ARE ── */}
       <ScrollReveal>
-        <section className="py-24 lg:py-32">
+        <section className="py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
               {/* Left — Sticky */}
               <div className="lg:sticky lg:top-32 lg:self-start">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.15em] text-gold mb-4 block">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.15em] text-gold mb-5 block">
                   Who We Are
                 </span>
-                <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy leading-[1.12] mb-8">
+                <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-8">
                   Your regulatory partner from day one.
                 </h2>
                 <div
@@ -251,14 +251,14 @@ export default function Home() {
                     text: "We understand that regulation is a means to an end. Our advice is practical, commercial and built around helping you launch faster and operate more efficiently.",
                   },
                 ].map((card) => (
-                  <div key={card.num} className="py-10 first:pt-0 last:pb-0">
+                  <div key={card.num} className="py-12 first:pt-0 last:pb-0">
                     <span className="font-serif text-[2rem] text-gold/30 font-bold">
                       {card.num}
                     </span>
-                    <h3 className="text-xl font-bold text-navy mt-2 mb-3">
+                    <h3 className="text-[1.3rem] font-bold text-navy mt-2 mb-3">
                       {card.title}
                     </h3>
-                    <p className="text-[16px] text-gray-500 leading-[1.7]">
+                    <p className="text-[16px] text-gray-500 leading-[1.75]">
                       {card.text}
                     </p>
                   </div>
@@ -270,11 +270,11 @@ export default function Home() {
       </ScrollReveal>
 
       {/* ── SECTORS ── */}
-      <section id="sectors" className="bg-navy py-24 lg:py-32 scroll-mt-24">
+      <section id="sectors" className="bg-navy py-32 lg:py-40 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="mb-16">
-              <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-white leading-[1.12] mb-5">
+            <div className="mb-20">
+              <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-white leading-[1.08] mb-5">
                 Every regulated sector. Every major market.
               </h2>
             </div>
@@ -285,15 +285,15 @@ export default function Home() {
                 <Link
                   key={sector.href}
                   href={sector.href}
-                  className="reveal group relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 hover:bg-white/[0.08] transition-all duration-300"
+                  className="reveal group relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-7 hover:bg-white/[0.08] transition-all duration-300"
                 >
-                  <div className="text-white/40 mb-4 group-hover:text-gold transition-colors">
+                  <div className="text-white/40 mb-5 group-hover:text-gold transition-colors">
                     {sector.icon}
                   </div>
                   <h3 className="text-[16px] font-bold text-white mb-2 leading-tight">
                     {sector.name}
                   </h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed mb-4">
+                  <p className="text-[13px] text-white/40 leading-relaxed mb-5">
                     {sector.description}
                   </p>
                   <div className="flex items-center gap-1">
@@ -316,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* ── STATEMENT BAND ── */}
-      <section className="relative py-32 lg:py-40">
+      <section className="relative py-36 lg:py-48">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -326,7 +326,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-navy/80" />
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="font-serif italic text-[1.6rem] sm:text-[2rem] lg:text-[2.6rem] text-white leading-[1.25] font-semibold">
+            <p className="font-serif italic text-[1.8rem] sm:text-[2.4rem] lg:text-[3rem] text-white leading-[1.2] font-semibold">
               &ldquo;Regulation is not the obstacle. It is your competitive advantage.&rdquo;
             </p>
           </ScrollReveal>
@@ -334,11 +334,11 @@ export default function Home() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="bg-cream py-24 lg:py-32">
+      <section className="bg-cream py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="max-w-2xl mb-16">
-              <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy leading-[1.12] mb-5">
+            <div className="max-w-2xl mb-20">
+              <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-5">
                 Everything you need to launch, operate and grow.
               </h2>
             </div>
@@ -349,13 +349,13 @@ export default function Home() {
                 <Link
                   key={service.name}
                   href={service.href}
-                  className="reveal group bg-white p-7 rounded-xl border border-transparent hover:border-gold/20 shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden"
+                  className="reveal group bg-white p-8 rounded-xl border border-transparent hover:border-gold/20 shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden"
                 >
                   <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-transparent group-hover:bg-gold transition-colors duration-300" />
                   <h3 className="text-[17px] font-bold text-navy group-hover:text-gold transition-colors mb-2">
                     {service.name}
                   </h3>
-                  <p className="text-[14px] text-gray-500 leading-[1.7]">
+                  <p className="text-[15px] text-gray-500 leading-[1.7]">
                     {service.description}
                   </p>
                 </Link>
@@ -367,26 +367,26 @@ export default function Home() {
 
       {/* ── HOW WE WORK ── */}
       <ScrollReveal>
-        <section className="py-24 lg:py-32">
+        <section className="py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy leading-[1.12] text-center mb-20">
+            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] text-center mb-24">
               How We Work
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
               {[
-                { step: "01", title: "Assess", text: "We review your business model, target market and optimal jurisdiction." },
-                { step: "02", title: "Authorise", text: "We prepare and manage your application through to approval." },
-                { step: "03", title: "Comply", text: "We support your firm post-authorisation with ongoing compliance." },
+                { step: "01", title: "Assess", text: "We review your business model, target market and optimal jurisdiction to build a clear regulatory strategy." },
+                { step: "02", title: "Authorise", text: "We prepare and manage your application through to approval, handling all regulator correspondence." },
+                { step: "03", title: "Comply", text: "We support your firm post-authorisation with ongoing compliance frameworks, monitoring and reporting." },
               ].map((item) => (
                 <div key={item.step} className="relative text-center">
                   <span className="block font-serif text-[8rem] lg:text-[10rem] font-bold text-navy/[0.04] leading-none absolute top-[-2rem] left-1/2 -translate-x-1/2 select-none pointer-events-none">
                     {item.step}
                   </span>
                   <div className="relative pt-12">
-                    <h3 className="font-serif text-[1.6rem] font-bold text-navy mb-3">
+                    <h3 className="font-serif text-[1.8rem] font-bold text-navy mb-4">
                       {item.title}
                     </h3>
-                    <p className="text-[16px] text-gray-500 leading-[1.7]">
+                    <p className="text-[16px] text-gray-500 leading-[1.75]">
                       {item.text}
                     </p>
                   </div>
@@ -398,18 +398,18 @@ export default function Home() {
       </ScrollReveal>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="bg-cream py-24 lg:py-32">
+      <section className="bg-cream py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy leading-[1.12] text-center mb-16">
+            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] text-center mb-20">
               What Our Clients Say
             </h2>
           </ScrollReveal>
           <ScrollReveal stagger>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <figure key={i} className="reveal bg-white rounded-xl p-10">
-                  <blockquote className="font-serif italic text-[18px] text-navy leading-[1.6] mb-8">
+                <figure key={i} className="reveal bg-white rounded-xl p-10 lg:p-12">
+                  <blockquote className="font-serif italic text-[18px] lg:text-[20px] text-navy leading-[1.6] mb-8">
                     &lsquo;{t.quote}&rsquo;
                   </blockquote>
                   <div className="h-[2px] w-10 bg-gold mb-5" />
@@ -433,10 +433,10 @@ export default function Home() {
 
       {/* ── INSIGHTS ── */}
       <ScrollReveal>
-        <section className="py-24 lg:py-32">
+        <section className="py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-14">
-              <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy leading-[1.12]">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-16">
+              <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08]">
                 Latest Insights
               </h2>
               <Link
@@ -463,11 +463,11 @@ export default function Home() {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
-                <div className="relative p-8 lg:p-10">
+                <div className="relative p-8 lg:p-12">
                   <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gold mb-3 block">
                     Regulatory Update
                   </span>
-                  <h3 className="font-serif text-[1.5rem] lg:text-[1.8rem] font-bold text-white leading-tight mb-3">
+                  <h3 className="font-serif text-[1.6rem] lg:text-[2rem] font-bold text-white leading-tight mb-3">
                     FCA PS25 Safeguarding: What Payment &amp; E-Money Firms Need to Know
                   </h3>
                   <p className="text-[14px] text-white/60 leading-relaxed">
@@ -480,30 +480,30 @@ export default function Home() {
               <div className="grid grid-cols-1 gap-6">
                 <Link
                   href="/insights"
-                  className="group bg-cream rounded-2xl p-8 lg:p-10 hover:shadow-card transition-shadow duration-300"
+                  className="group bg-cream rounded-2xl p-8 lg:p-12 hover:shadow-card transition-shadow duration-300"
                 >
                   <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gold mb-3 block">
                     Licensing Guide
                   </span>
-                  <h3 className="font-serif text-[1.3rem] lg:text-[1.5rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-serif text-[1.4rem] lg:text-[1.6rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
                     MiCA CASP Authorisation: The Complete Guide for Crypto Firms
                   </h3>
-                  <p className="text-[14px] text-gray-500 leading-relaxed">
+                  <p className="text-[15px] text-gray-500 leading-relaxed">
                     Everything you need to know about obtaining a MiCA Crypto-Asset Service Provider licence in the European Union.
                   </p>
                 </Link>
 
                 <Link
                   href="/insights"
-                  className="group bg-cream rounded-2xl p-8 lg:p-10 hover:shadow-card transition-shadow duration-300"
+                  className="group bg-cream rounded-2xl p-8 lg:p-12 hover:shadow-card transition-shadow duration-300"
                 >
                   <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gold mb-3 block">
                     International
                   </span>
-                  <h3 className="font-serif text-[1.3rem] lg:text-[1.5rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-serif text-[1.4rem] lg:text-[1.6rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
                     Canada MSB Registration: FINTRAC Requirements and Process
                   </h3>
-                  <p className="text-[14px] text-gray-500 leading-relaxed">
+                  <p className="text-[15px] text-gray-500 leading-relaxed">
                     How to register as a Money Services Business in Canada and meet FINTRAC compliance obligations.
                   </p>
                 </Link>
@@ -514,10 +514,10 @@ export default function Home() {
       </ScrollReveal>
 
       {/* ── JURISDICTIONS ── */}
-      <section className="bg-navy py-24 lg:py-32">
+      <section className="bg-navy py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-white leading-[1.12] text-center mb-16">
+            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-white leading-[1.08] text-center mb-20">
               Global Reach
             </h2>
           </ScrollReveal>
@@ -526,9 +526,9 @@ export default function Home() {
               {jurisdictions.map((j) => (
                 <div
                   key={j.name}
-                  className="reveal text-center bg-white/[0.04] border border-white/[0.06] rounded-xl p-5 hover:bg-white/[0.08] transition-colors"
+                  className="reveal text-center bg-white/[0.04] border border-white/[0.06] rounded-xl p-6 hover:bg-white/[0.08] transition-colors"
                 >
-                  <span className="text-3xl block mb-2">{j.flag}</span>
+                  <span className="text-3xl block mb-3">{j.flag}</span>
                   <h3 className="text-[14px] font-bold text-white mb-1">{j.name}</h3>
                   <p className="text-[11px] text-white/40">{j.regulators}</p>
                 </div>
@@ -539,22 +539,22 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 lg:py-32">
+      <section className="py-32 lg:py-40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy leading-[1.12] mb-6">
+            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-8">
               Ready to launch your financial services business?
             </h2>
-            <p className="text-[17px] text-gray-500 leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-[17px] text-gray-500 leading-[1.75] mb-12 max-w-xl mx-auto">
               Get in touch to discuss how we can support your regulatory and compliance needs.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-navy text-white px-9 py-4 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
+              className="inline-block bg-navy text-white px-10 py-5 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
             >
               Speak to an Expert
             </Link>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-[14px] text-gray-400">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-[14px] text-gray-400">
               <a
                 href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
                 className="hover:text-navy transition-colors"

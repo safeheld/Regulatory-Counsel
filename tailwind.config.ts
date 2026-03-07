@@ -23,6 +23,7 @@ const config: Config = {
           muted: "#C9A94E",
         },
         cream: "#F7F4EF",
+        "warm-white": "#FDFCFA",
         accent: "#B8922A",
       },
       fontFamily: {
