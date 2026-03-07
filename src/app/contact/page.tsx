@@ -5,7 +5,7 @@ import { contactInfo } from "@/lib/navigation";
 import { faqJsonLd } from "@/lib/jsonLd";
 
 const inputClass =
-  "w-full px-5 py-3.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold/30 focus:border-gold outline-none transition-colors text-[15px]";
+  "w-full px-5 py-3.5 border border-[#E5E0D8] rounded-lg focus:ring-2 focus:ring-gold/30 focus:border-gold outline-none transition-colors text-[15px]";
 
 const interests = [
   "FCA Licensing",
@@ -81,12 +81,12 @@ export default function ContactPage() {
       />
 
       {/* Hero */}
-      <section className="bg-navy text-white py-28 lg:py-36">
+      <section className="bg-navy text-white py-28 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-serif text-[3rem] lg:text-[4.5rem] font-bold leading-[1.05] mb-6">
+          <h1 className="text-white mb-6">
             Speak with a Regulatory Expert
           </h1>
-          <p className="text-[17px] text-white/50 max-w-2xl leading-[1.75]">
+          <p className="text-[17px] text-white/50 max-w-2xl leading-[1.7]">
             Get in touch to discuss your licensing, compliance or regulatory needs. Free
             initial consultation.
           </p>
@@ -94,7 +94,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + Details */}
-      <section className="py-32 lg:py-40">
+      <section className="bg-white py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-20">
             {/* Left — Form (3 cols) */}
@@ -185,7 +185,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="bg-navy text-white px-10 py-4 rounded-lg font-semibold text-[15px] hover:bg-navy-light transition-colors disabled:opacity-50"
+                  className="bg-navy text-white px-10 py-3.5 rounded font-semibold text-[15px] hover:bg-navy-light transition-colors disabled:opacity-50"
                 >
                   {status === "sending" ? "Sending..." : "Send Enquiry"}
                 </button>
@@ -209,16 +209,16 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-[1.2rem] font-bold text-navy mb-2">Address</h3>
-                  <p className="text-gray-500 text-[15px] leading-[1.7]">{contactInfo.address}</p>
+                  <p className="text-[#555] text-[15px] leading-[1.7]">{contactInfo.address}</p>
                 </div>
                 <div>
                   <h3 className="font-serif text-[1.2rem] font-bold text-navy mb-2">Hours</h3>
-                  <p className="text-gray-500 text-[15px]">Monday&ndash;Friday, 9am&ndash;6pm GMT</p>
+                  <p className="text-[#555] text-[15px]">Monday&ndash;Friday, 9am&ndash;6pm GMT</p>
                 </div>
               </div>
 
               {/* Google Maps */}
-              <div className="rounded-xl overflow-hidden border border-gray-200">
+              <div className="rounded-lg overflow-hidden border border-[#E5E0D8]">
                 <iframe
                   title="Regulatory Counsel office location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.1!2d-0.1195!3d51.5265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b558b975b65%3A0x1234567890abcdef!2s2+Frederick+Street%2C+London+WC1X+0ND!5e0!3m2!1sen!2suk!4v1700000000000"
@@ -238,14 +238,14 @@ export default function ContactPage() {
       {/* FAQs */}
       <section className="py-32 lg:py-40 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy mb-16 text-center">
+          <h2 className="text-navy mb-16 text-center">
             Common Questions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white rounded-xl p-8 lg:p-10 shadow-card">
-                <h3 className="font-serif text-[1.2rem] font-bold text-navy mb-3">{faq.q}</h3>
-                <p className="text-gray-500 text-[15px] leading-[1.75]">{faq.a}</p>
+              <div key={faq.q} className="bg-white rounded-lg p-8 lg:p-10 shadow-card">
+                <h3 className="font-serif text-[22px] font-bold text-navy mb-3">{faq.q}</h3>
+                <p className="text-[#555] text-[15px] leading-[1.7]">{faq.a}</p>
               </div>
             ))}
           </div>

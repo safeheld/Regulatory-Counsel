@@ -13,14 +13,14 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`bg-white sticky top-0 z-50 transition-shadow duration-300 ${
+      className={`bg-white sticky top-0 z-50 border-b border-[#F0EDE8] transition-shadow duration-300 ${
         scrolled ? "shadow-nav" : ""
       }`}
     >
@@ -28,10 +28,10 @@ export default function Header() {
         <div className="flex justify-between items-center h-20 lg:h-[88px]">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-tight">
-            <span className="font-serif text-[22px] lg:text-[26px] font-bold text-navy tracking-[-0.01em]">
+            <span className="font-serif text-[20px] lg:text-[20px] font-bold text-navy tracking-[-0.01em]">
               Regulatory Counsel
             </span>
-            <span className="text-[11px] lg:text-[12px] text-gold font-medium tracking-[0.12em] uppercase -mt-0.5">
+            <span className="text-[11px] text-[#888] font-medium tracking-[0.12em] uppercase -mt-0.5">
               Global Regulatory Advisory
             </span>
           </Link>
@@ -44,7 +44,7 @@ export default function Header() {
               onMouseEnter={() => setSectorsOpen(true)}
               onMouseLeave={() => setSectorsOpen(false)}
             >
-              <button className="text-[15px] text-gray-600 hover:text-navy transition-colors flex items-center gap-1 py-2">
+              <button className="text-[14px] text-[#333] hover:text-gold transition-colors flex items-center gap-1 py-2">
                 Sectors
                 <svg
                   className={`w-3.5 h-3.5 transition-transform ${sectorsOpen ? "rotate-180" : ""}`}
@@ -61,7 +61,7 @@ export default function Header() {
                     <Link
                       key={sector.href}
                       href={sector.href}
-                      className="block px-5 py-2.5 text-[15px] text-gray-600 hover:bg-cream hover:text-navy transition-colors"
+                      className="block px-5 py-2.5 text-[14px] text-[#333] hover:bg-cream hover:text-navy transition-colors"
                     >
                       {sector.name}
                     </Link>
@@ -76,7 +76,7 @@ export default function Header() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="text-[15px] text-gray-600 hover:text-navy transition-colors flex items-center gap-1 py-2">
+              <button className="text-[14px] text-[#333] hover:text-gold transition-colors flex items-center gap-1 py-2">
                 Services
                 <svg
                   className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
@@ -93,7 +93,7 @@ export default function Header() {
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="block px-5 py-2.5 text-[15px] text-gray-600 hover:bg-cream hover:text-navy transition-colors"
+                      className="block px-5 py-2.5 text-[14px] text-[#333] hover:bg-cream hover:text-navy transition-colors"
                     >
                       {service.name}
                     </Link>
@@ -104,21 +104,21 @@ export default function Header() {
 
             <Link
               href="/insights"
-              className="text-[15px] text-gray-600 hover:text-navy transition-colors"
+              className="text-[14px] text-[#333] hover:text-gold transition-colors"
             >
               Insights
             </Link>
 
             <Link
               href="/about"
-              className="text-[15px] text-gray-600 hover:text-navy transition-colors"
+              className="text-[14px] text-[#333] hover:text-gold transition-colors"
             >
               About
             </Link>
 
             <Link
               href="/contact"
-              className="bg-navy text-white px-7 py-3 rounded text-[14px] font-medium hover:bg-navy-light transition-colors"
+              className="bg-navy text-white px-5 py-2.5 rounded text-[14px] font-medium hover:bg-navy-light transition-colors"
             >
               Speak to an Expert
             </Link>
@@ -144,7 +144,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileOpen && (
-          <div className="lg:hidden pb-8 border-t border-gray-100">
+          <div className="lg:hidden pb-8 border-t border-[#F0EDE8]">
             <div className="pt-4 space-y-1">
               {/* Mobile Sectors */}
               <div>
@@ -168,7 +168,7 @@ export default function Header() {
                       <Link
                         key={sector.href}
                         href={sector.href}
-                        className="block px-4 py-2 text-gray-600 hover:text-navy text-[15px]"
+                        className="block px-4 py-2 text-[#333] hover:text-navy text-[14px]"
                         onClick={() => setMobileOpen(false)}
                       >
                         {sector.name}
@@ -200,7 +200,7 @@ export default function Header() {
                       <Link
                         key={service.href}
                         href={service.href}
-                        className="block px-4 py-2 text-gray-600 hover:text-navy text-[15px]"
+                        className="block px-4 py-2 text-[#333] hover:text-navy text-[14px]"
                         onClick={() => setMobileOpen(false)}
                       >
                         {service.name}

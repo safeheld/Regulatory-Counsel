@@ -4,7 +4,7 @@
 
 :root {
   --background: #FDFCFA;
-  --foreground: #1a1a2e;
+  --foreground: #1A1A1A;
 }
 
 html {
@@ -14,8 +14,31 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-size: 17px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Global typography: Cormorant Garamond for headings, Figtree for body ── */
+h1, h2, h3 {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+}
+
+h1 {
+  font-size: clamp(52px, 7vw, 80px);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+body, p, nav, button, input, select, textarea {
+  font-family: var(--font-figtree), 'Figtree', system-ui, sans-serif;
 }
 
 @layer utilities {
@@ -32,9 +55,8 @@ body {
 /* Scroll reveal base state */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal.revealed {
@@ -42,7 +64,7 @@ body {
   transform: translateY(0);
 }
 
-/* Stagger children */
+/* Stagger children with 100ms delay increments */
 .reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
 .reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.2s; }
 .reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.3s; }

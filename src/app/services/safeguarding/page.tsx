@@ -11,7 +11,7 @@ function Content() {
   return (
     <div className="max-w-4xl">
       {/* PS25 Urgent Banner */}
-      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl p-8 lg:p-10 mb-14 shadow-card">
+      <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg p-8 lg:p-10 mb-14 shadow-card">
         <div className="flex items-start gap-5">
           <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center shrink-0">
             <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -37,7 +37,7 @@ function Content() {
       <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy mb-8">
         What We Do
       </h2>
-      <p className="text-gray-500 text-[16px] leading-[1.8] mb-14">
+      <p className="text-[#444] text-[16px] leading-[1.8] mb-14">
         Safeguarding is one of the most critical regulatory obligations for payment
         institutions and electronic money institutions. We help firms design, implement
         and maintain safeguarding arrangements that meet current FCA requirements and
@@ -49,7 +49,7 @@ function Content() {
       <div className="space-y-12 mb-14">
         <div>
           <h3 className="font-serif text-[1.4rem] lg:text-[1.7rem] font-bold text-navy mb-4">Who Is Affected</h3>
-          <p className="text-gray-500 text-[16px] leading-[1.8]">
+          <p className="text-[#444] text-[16px] leading-[1.8]">
             PS25 applies to all FCA-authorised payment institutions (APIs) and electronic money
             institutions (EMIs) that hold client funds. This includes firms that safeguard via
             segregation in a credit institution, insurance or guarantee arrangements, and firms
@@ -61,7 +61,7 @@ function Content() {
 
         <div>
           <h3 className="font-serif text-[1.4rem] lg:text-[1.7rem] font-bold text-navy mb-4">PS25 &mdash; What Changes</h3>
-          <p className="text-gray-500 text-[16px] leading-[1.8]">
+          <p className="text-[#444] text-[16px] leading-[1.8]">
             From June 2026, PS25 introduces a statutory trust over safeguarded funds,
             mandatory annual safeguarding audits, enhanced daily and periodic reconciliation requirements,
             resolution pack obligations and strengthened record-keeping standards. Firms
@@ -74,7 +74,7 @@ function Content() {
 
         <div>
           <h3 className="font-serif text-[1.4rem] lg:text-[1.7rem] font-bold text-navy mb-4">Annual Safeguarding Audit</h3>
-          <p className="text-gray-500 text-[16px] leading-[1.8]">
+          <p className="text-[#444] text-[16px] leading-[1.8]">
             PS25 makes annual independent safeguarding audits mandatory for the first time. We conduct
             comprehensive safeguarding audits covering fund segregation, reconciliation processes,
             account arrangements, record keeping, governance oversight and compliance with the safeguarding
@@ -85,7 +85,7 @@ function Content() {
 
         <div>
           <h3 className="font-serif text-[1.4rem] lg:text-[1.7rem] font-bold text-navy mb-4">Resolution Pack</h3>
-          <p className="text-gray-500 text-[16px] leading-[1.8]">
+          <p className="text-[#444] text-[16px] leading-[1.8]">
             Under PS25, firms must maintain a resolution pack containing all information needed
             to return client funds promptly in the event of insolvency. This includes a complete
             record of safeguarded funds, account details, reconciliation records and client
@@ -96,7 +96,7 @@ function Content() {
 
         <div>
           <h3 className="font-serif text-[1.4rem] lg:text-[1.7rem] font-bold text-navy mb-4">Safeguarding Framework Build</h3>
-          <p className="text-gray-500 text-[16px] leading-[1.8]">
+          <p className="text-[#444] text-[16px] leading-[1.8]">
             For firms establishing or upgrading their safeguarding arrangements, we design
             the complete framework: safeguarding policy, daily and periodic reconciliation
             procedures, account structure, record-keeping standards, internal controls and
@@ -107,7 +107,7 @@ function Content() {
 
         <div>
           <h3 className="font-serif text-[1.4rem] lg:text-[1.7rem] font-bold text-navy mb-4">Monthly Reconciliation Support</h3>
-          <p className="text-gray-500 text-[16px] leading-[1.8]">
+          <p className="text-[#444] text-[16px] leading-[1.8]">
             Daily reconciliation is best practice and will be strengthened under PS25. We help firms
             implement robust daily and periodic reconciliation processes, review reconciliation
             accuracy on an ongoing basis, and investigate and resolve discrepancies. For firms on
@@ -117,7 +117,7 @@ function Content() {
 
         <div>
           <h3 className="font-serif text-[1.4rem] lg:text-[1.7rem] font-bold text-navy mb-4">Safeguarding Account Introduction</h3>
-          <p className="text-gray-500 text-[16px] leading-[1.8]">
+          <p className="text-[#444] text-[16px] leading-[1.8]">
             We introduce firms to banks that offer designated safeguarding accounts with
             appropriate terms and acknowledgement letters. We support the account setup
             process and ensure the documentation meets FCA requirements, including the

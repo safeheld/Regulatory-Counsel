@@ -65,10 +65,10 @@ export interface SectorPageProps {
 
 function FAQItem({ faq, open, toggle }: { faq: FAQ; open: boolean; toggle: () => void }) {
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-[#E5E0D8]">
       <button
         onClick={toggle}
-        className="w-full flex justify-between items-center py-7 text-left gap-4"
+        className="w-full flex justify-between items-center py-6 text-left gap-4"
       >
         <span className="text-[17px] font-bold text-navy">{faq.question}</span>
         <svg
@@ -81,8 +81,8 @@ function FAQItem({ faq, open, toggle }: { faq: FAQ; open: boolean; toggle: () =>
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      <div className={`overflow-hidden transition-all ${open ? "max-h-[600px] pb-7" : "max-h-0"}`}>
-        <p className="text-gray-500 leading-[1.75] text-[16px]">{faq.answer}</p>
+      <div className={`overflow-hidden transition-all ${open ? "max-h-[600px] pb-6" : "max-h-0"}`}>
+        <p className="text-[#444] leading-[1.7] text-[16px]">{faq.answer}</p>
       </div>
     </div>
   );
@@ -114,15 +114,15 @@ export default function SectorLayout({
       <section className="bg-navy text-white py-28 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="font-serif text-[2.8rem] lg:text-[4rem] font-bold leading-[1.05] mb-8">
+            <h1 className="text-white mb-8">
               {hero.headline}
             </h1>
-            <p className="text-[17px] text-white/50 leading-[1.75] mb-12 max-w-[560px]">
+            <p className="text-[17px] text-white/50 leading-[1.7] mb-10 max-w-[560px]">
               {hero.sub}
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-gold text-white px-9 py-4.5 rounded text-[15px] font-semibold hover:bg-gold-light transition-colors"
+              className="inline-block bg-gold text-white px-8 py-3.5 rounded text-[15px] font-semibold hover:bg-gold-light transition-colors"
             >
               Speak to an Expert
             </Link>
@@ -131,19 +131,19 @@ export default function SectorLayout({
       </section>
 
       {/* ── 2. INTRO ── */}
-      <section className="py-32 lg:py-40">
+      <section className="bg-white py-32 lg:py-40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gray-500 text-[17px] leading-[1.8]">{intro}</p>
+          <p className="text-[#444] text-[17px] leading-[1.7]">{intro}</p>
         </div>
       </section>
 
       {/* ── 3. LICENSING — Jurisdiction Table ── */}
-      <section className="pb-32 lg:pb-40">
+      <section className="bg-white pb-32 lg:pb-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy mb-14">
+          <h2 className="text-navy mb-12">
             Licensing Jurisdictions
           </h2>
-          <div className="overflow-x-auto rounded-xl border border-gray-200">
+          <div className="overflow-x-auto rounded-lg border border-[#E5E0D8]">
             <table className="w-full min-w-[640px]">
               <thead>
                 <tr className="bg-navy text-white text-left">
@@ -157,9 +157,9 @@ export default function SectorLayout({
                 {jurisdictions.map((row, i) => (
                   <tr key={row.country} className={i % 2 === 0 ? "bg-white" : "bg-cream/50"}>
                     <td className="px-6 py-4 font-medium text-navy text-[14px]">{row.country}</td>
-                    <td className="px-6 py-4 text-gray-500 text-[14px]">{row.regulator}</td>
-                    <td className="px-6 py-4 text-gray-500 text-[14px]">{row.minCapital}</td>
-                    <td className="px-6 py-4 text-gray-500 text-[14px]">{row.timeline}</td>
+                    <td className="px-6 py-4 text-[#555] text-[14px]">{row.regulator}</td>
+                    <td className="px-6 py-4 text-[#555] text-[14px]">{row.minCapital}</td>
+                    <td className="px-6 py-4 text-[#555] text-[14px]">{row.timeline}</td>
                   </tr>
                 ))}
               </tbody>
@@ -167,13 +167,13 @@ export default function SectorLayout({
           </div>
 
           {jurisdictionDetails.length > 0 && (
-            <div className="mt-20 space-y-16">
+            <div className="mt-16 space-y-14">
               {jurisdictionDetails.map((detail) => (
                 <div key={detail.title}>
-                  <h3 className="font-serif text-[1.5rem] lg:text-[1.8rem] font-bold text-navy mb-5">
+                  <h3 className="font-serif text-[24px] font-bold text-navy mb-4">
                     {detail.title}
                   </h3>
-                  <p className="text-gray-500 leading-[1.75] text-[16px]">{detail.body}</p>
+                  <p className="text-[#444] leading-[1.7] text-[16px]">{detail.body}</p>
                 </div>
               ))}
             </div>
@@ -186,7 +186,7 @@ export default function SectorLayout({
       {/* ── 4. OTHER SERVICES ── */}
       <section className="py-32 lg:py-40 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy mb-14">
+          <h2 className="text-navy mb-12">
             Other Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -194,13 +194,12 @@ export default function SectorLayout({
               <Link
                 key={service.name}
                 href={service.href}
-                className="group bg-white p-8 rounded-xl border border-transparent hover:border-gold/20 shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden"
+                className="group bg-white p-8 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-250 relative overflow-hidden border-l-[3px] border-l-transparent hover:border-l-gold"
               >
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-transparent group-hover:bg-gold transition-colors duration-300" />
-                <h3 className="text-[17px] font-bold text-navy group-hover:text-gold transition-colors mb-2">
+                <h3 className="font-serif text-[22px] font-bold text-navy group-hover:text-gold transition-colors mb-2">
                   {service.name}
                 </h3>
-                <p className="text-[15px] text-gray-500 leading-[1.7]">
+                <p className="text-[15px] text-[#555] leading-[1.7]">
                   {service.description}
                 </p>
               </Link>
@@ -210,12 +209,12 @@ export default function SectorLayout({
       </section>
 
       {/* ── 5. FAQs ── */}
-      <section className="py-32 lg:py-40">
+      <section className="bg-white py-32 lg:py-40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy mb-14">
+          <h2 className="text-navy mb-12">
             Frequently Asked Questions
           </h2>
-          <div className="border-t border-gray-200">
+          <div className="border-t border-[#E5E0D8]">
             {faqs.map((faq, i) => (
               <FAQItem
                 key={i}
@@ -231,21 +230,21 @@ export default function SectorLayout({
       {/* ── 6. TESTIMONIAL ── */}
       <section className="py-32 lg:py-40 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="font-serif italic text-[1.4rem] lg:text-[1.8rem] text-navy leading-[1.5] mb-10 max-w-3xl mx-auto">
+          <div className="h-[2px] w-10 bg-gold mx-auto mb-6" />
+          <blockquote className="font-serif italic text-[20px] text-[#1A1A1A] leading-[1.5] mb-8 max-w-3xl mx-auto">
             &lsquo;{testimonial.quote}&rsquo;
           </blockquote>
-          <div className="h-[2px] w-10 bg-gold mx-auto mb-5" />
-          <p className="text-[13px] font-medium text-gray-400 uppercase tracking-[0.05em]">
+          <p className="text-[14px] font-medium text-[#777] uppercase tracking-[0.05em]">
             &mdash; {testimonial.attribution}
           </p>
         </div>
       </section>
 
       {/* ── 7. RELATED INSIGHTS ── */}
-      <section className="py-32 lg:py-40">
+      <section className="bg-white py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-14">
-            <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-12">
+            <h2 className="text-navy">
               Related Insights
             </h2>
             <Link
@@ -267,9 +266,9 @@ export default function SectorLayout({
                   href={`/insights/${post.slug.current}`}
                   className="group"
                 >
-                  <div className="h-48 rounded-xl bg-gradient-to-br from-navy/8 to-gold/8 mb-5" />
+                  <div className="h-48 rounded-lg bg-gradient-to-br from-navy/8 to-gold/8 mb-5" />
                   {post.publishedAt && (
-                    <time className="text-[12px] text-gray-400 uppercase tracking-[0.08em]">
+                    <time className="text-[12px] text-[#777] uppercase tracking-[0.08em]">
                       {new Date(post.publishedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "long",
@@ -281,7 +280,7 @@ export default function SectorLayout({
                     {post.title}
                   </h3>
                   {post.excerpt && (
-                    <p className="text-[14px] text-gray-500 leading-[1.7] line-clamp-3">
+                    <p className="text-[14px] text-[#555] leading-[1.7] line-clamp-3">
                       {post.excerpt}
                     </p>
                   )}
@@ -289,7 +288,7 @@ export default function SectorLayout({
               ))}
             </div>
           ) : (
-            <p className="text-gray-400 text-center">
+            <p className="text-[#777] text-center">
               Insights for this sector coming soon.
             </p>
           )}

@@ -39,10 +39,10 @@ export interface ServicePageProps {
 
 function FAQItem({ faq, open, toggle }: { faq: FAQ; open: boolean; toggle: () => void }) {
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-[#E5E0D8]">
       <button
         onClick={toggle}
-        className="w-full flex justify-between items-center py-7 text-left gap-4"
+        className="w-full flex justify-between items-center py-6 text-left gap-4"
       >
         <span className="text-[17px] font-bold text-navy">{faq.question}</span>
         <svg
@@ -55,8 +55,8 @@ function FAQItem({ faq, open, toggle }: { faq: FAQ; open: boolean; toggle: () =>
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      <div className={`overflow-hidden transition-all ${open ? "max-h-[600px] pb-7" : "max-h-0"}`}>
-        <p className="text-gray-500 leading-[1.75] text-[16px]">{faq.answer}</p>
+      <div className={`overflow-hidden transition-all ${open ? "max-h-[600px] pb-6" : "max-h-0"}`}>
+        <p className="text-[#444] leading-[1.7] text-[16px]">{faq.answer}</p>
       </div>
     </div>
   );
@@ -82,15 +82,15 @@ export default function ServiceLayout({
       <section className="bg-navy text-white py-28 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="font-serif text-[2.8rem] lg:text-[4rem] font-bold leading-[1.05] mb-8">
+            <h1 className="text-white mb-8">
               {hero.headline}
             </h1>
-            <p className="text-[17px] text-white/50 leading-[1.75] mb-12 max-w-[560px]">
+            <p className="text-[17px] text-white/50 leading-[1.7] mb-10 max-w-[560px]">
               {hero.sub}
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-gold text-white px-9 py-4.5 rounded text-[15px] font-semibold hover:bg-gold-light transition-colors"
+              className="inline-block bg-gold text-white px-8 py-3.5 rounded text-[15px] font-semibold hover:bg-gold-light transition-colors"
             >
               Speak to an Expert
             </Link>
@@ -99,7 +99,7 @@ export default function ServiceLayout({
       </section>
 
       {/* ── 2. WHAT WE DO (content slot) ── */}
-      <section className="py-32 lg:py-40">
+      <section className="bg-white py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {content}
         </div>
@@ -108,7 +108,7 @@ export default function ServiceLayout({
       {/* ── 3. SECTORS WE SERVE ── */}
       <section className="py-32 lg:py-40 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy mb-14">
+          <h2 className="text-navy mb-12">
             Sectors We Serve
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -116,7 +116,7 @@ export default function ServiceLayout({
               <Link
                 key={sector.href}
                 href={sector.href}
-                className="group bg-white p-8 rounded-xl border border-gray-200 hover:border-gold/30 hover:shadow-card-hover transition-all duration-300 flex items-center justify-between"
+                className="group bg-white p-8 rounded-lg border border-[#E5E0D8] hover:border-gold hover:shadow-card-hover transition-all duration-250 flex items-center justify-between"
               >
                 <span className="text-[17px] font-bold text-navy group-hover:text-gold transition-colors">
                   {sector.name}
@@ -137,12 +137,12 @@ export default function ServiceLayout({
       </section>
 
       {/* ── 4. FAQs ── */}
-      <section className="py-32 lg:py-40">
+      <section className="bg-white py-32 lg:py-40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy mb-14">
+          <h2 className="text-navy mb-12">
             Frequently Asked Questions
           </h2>
-          <div className="border-t border-gray-200">
+          <div className="border-t border-[#E5E0D8]">
             {faqs.map((faq, i) => (
               <FAQItem
                 key={i}
@@ -158,7 +158,7 @@ export default function ServiceLayout({
       {/* ── 5. RELATED SERVICES ── */}
       <section className="py-32 lg:py-40 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-[2rem] lg:text-[2.8rem] font-bold text-navy mb-14">
+          <h2 className="text-navy mb-12">
             Related Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -166,13 +166,12 @@ export default function ServiceLayout({
               <Link
                 key={service.href}
                 href={service.href}
-                className="group bg-white p-8 rounded-xl border border-transparent hover:border-gold/20 shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden"
+                className="group bg-white p-8 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-250 relative overflow-hidden border-l-[3px] border-l-transparent hover:border-l-gold"
               >
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-transparent group-hover:bg-gold transition-colors duration-300" />
-                <h3 className="text-[17px] font-bold text-navy group-hover:text-gold transition-colors mb-2">
+                <h3 className="font-serif text-[22px] font-bold text-navy group-hover:text-gold transition-colors mb-2">
                   {service.name}
                 </h3>
-                <p className="text-[15px] text-gray-500 leading-[1.7]">
+                <p className="text-[15px] text-[#555] leading-[1.7]">
                   {service.description}
                 </p>
               </Link>

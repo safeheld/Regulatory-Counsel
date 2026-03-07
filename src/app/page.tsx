@@ -1,6 +1,8 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import ContactStrip from "@/components/ContactStrip";
 import { contactInfo } from "@/lib/navigation";
 
 export const metadata: Metadata = {
@@ -124,27 +126,27 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="bg-warm-white">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch min-h-[90vh]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
             {/* Left — Copy */}
-            <div className="flex flex-col justify-center py-24 lg:py-36 lg:pr-16">
-              <h1 className="font-serif text-[3.2rem] sm:text-[4rem] lg:text-[5rem] font-bold text-navy leading-[1.05] tracking-[-0.02em] mb-8">
+            <div className="flex flex-col justify-center py-20 lg:py-28 lg:pr-16">
+              <h1 className="text-navy tracking-[-0.02em] mb-8">
                 Launch. <span className="italic text-gold">Regulate.</span> Grow.
               </h1>
-              <p className="text-[17px] lg:text-[18px] text-gray-500 leading-[1.8] max-w-[520px] mb-12">
+              <p className="text-[17px] text-[#444] leading-[1.7] max-w-[520px] mb-10">
                 We help entrepreneurs and businesses launch and operate regulated financial services, from licensing and compliance to full end-to-end regulatory support, across every major jurisdiction.
               </p>
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <Link
                   href="/contact"
-                  className="bg-navy text-white px-9 py-4.5 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
+                  className="bg-navy text-white px-8 py-3.5 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
                 >
                   Speak to an Expert
                 </Link>
                 <a
                   href="#sectors"
-                  className="text-navy text-[15px] font-medium flex items-center gap-2 py-4 hover:text-gold transition-colors group"
+                  className="text-gold text-[15px] font-medium flex items-center gap-2 py-3.5 hover:text-gold-light transition-colors group"
                 >
                   Explore our sectors
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -155,12 +157,14 @@ export default function Home() {
             </div>
 
             {/* Right — Photo */}
-            <div className="hidden lg:block relative -mr-[calc((100vw-1280px)/2+1rem)] min-h-[600px]">
-              <div
-                className="absolute inset-0 bg-cover bg-center rounded-bl-[48px]"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80')",
-                }}
+            <div className="hidden lg:block relative min-h-[600px]">
+              <Image
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                alt="Professionals in a meeting"
+                fill
+                className="object-cover"
+                sizes="50vw"
+                priority
               />
             </div>
           </div>
@@ -168,22 +172,24 @@ export default function Home() {
       </section>
 
       {/* ── STATS STRIP ── */}
-      <section className="border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-serif text-[3rem] lg:text-[3.5rem] font-bold text-navy leading-none">
-                  {stat.value}
-                </p>
-                <p className="text-[12px] text-gray-400 mt-3 font-medium uppercase tracking-[0.12em]">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+      <ScrollReveal>
+        <section className="bg-navy">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+            <div className="reveal grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+              {stats.map((stat) => (
+                <div key={stat.label} className="reveal text-center">
+                  <p className="font-serif text-[42px] font-bold text-gold leading-none">
+                    {stat.value}
+                  </p>
+                  <p className="text-[14px] text-white mt-3 font-medium uppercase tracking-[0.05em]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       {/* ── GOLD MARQUEE ── */}
       <section className="bg-gold overflow-hidden">
@@ -192,10 +198,10 @@ export default function Home() {
             {[...marqueeItems, ...marqueeItems].map((item, i) => (
               <span
                 key={i}
-                className="text-white text-[13px] font-semibold uppercase tracking-[0.15em] mx-8 inline-flex items-center gap-3"
+                className="text-navy text-[13px] font-semibold uppercase tracking-[0.15em] mx-6 inline-flex items-center gap-3"
               >
-                <span className="w-1.5 h-1.5 bg-white/40 rounded-full" />
                 {item}
+                <span className="text-navy/40">&middot;</span>
               </span>
             ))}
           </div>
@@ -204,23 +210,26 @@ export default function Home() {
 
       {/* ── WHO WE ARE ── */}
       <ScrollReveal>
-        <section className="py-32 lg:py-40">
+        <section className="bg-white py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
               {/* Left — Sticky */}
               <div className="lg:sticky lg:top-32 lg:self-start">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.15em] text-gold mb-5 block">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.1em] text-gold mb-5 block">
                   Who We Are
                 </span>
-                <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-8">
+                <h2 className="text-navy mb-8">
                   Your regulatory partner from day one.
                 </h2>
-                <div
-                  className="aspect-[4/3] rounded-2xl bg-cover bg-center mb-6"
-                  style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80')",
-                  }}
-                />
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden mb-6">
+                  <Image
+                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+                    alt="Office collaboration"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
                 <Link
                   href="/about"
                   className="text-navy text-[15px] font-medium flex items-center gap-2 hover:text-gold transition-colors group"
@@ -233,7 +242,7 @@ export default function Home() {
               </div>
 
               {/* Right — 3 Cards */}
-              <div className="space-y-0 divide-y divide-gray-200">
+              <div className="space-y-0 divide-y divide-[#E5E0D8]">
                 {[
                   {
                     num: "01",
@@ -251,14 +260,14 @@ export default function Home() {
                     text: "We understand that regulation is a means to an end. Our advice is practical, commercial and built around helping you launch faster and operate more efficiently.",
                   },
                 ].map((card) => (
-                  <div key={card.num} className="py-12 first:pt-0 last:pb-0">
-                    <span className="font-serif text-[2rem] text-gold/30 font-bold">
+                  <div key={card.num} className="py-10 first:pt-0 last:pb-0">
+                    <span className="font-serif text-[2rem] text-gold font-bold">
                       {card.num}
                     </span>
-                    <h3 className="text-[1.3rem] font-bold text-navy mt-2 mb-3">
+                    <h3 className="text-navy mt-2 mb-3">
                       {card.title}
                     </h3>
-                    <p className="text-[16px] text-gray-500 leading-[1.75]">
+                    <p className="text-[16px] text-[#444] leading-[1.7]">
                       {card.text}
                     </p>
                   </div>
@@ -273,8 +282,8 @@ export default function Home() {
       <section id="sectors" className="bg-navy py-32 lg:py-40 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="mb-20">
-              <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-white leading-[1.08] mb-5">
+            <div className="mb-16">
+              <h2 className="text-white mb-5">
                 Every regulated sector. Every major market.
               </h2>
             </div>
@@ -285,7 +294,7 @@ export default function Home() {
                 <Link
                   key={sector.href}
                   href={sector.href}
-                  className="reveal group relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-7 hover:bg-white/[0.08] transition-all duration-300"
+                  className="reveal group relative bg-white/[0.06] border border-white/[0.12] rounded-lg p-8 hover:bg-white/[0.10] hover:border-gold transition-all duration-250"
                 >
                   <div className="text-white/40 mb-5 group-hover:text-gold transition-colors">
                     {sector.icon}
@@ -293,21 +302,12 @@ export default function Home() {
                   <h3 className="text-[16px] font-bold text-white mb-2 leading-tight">
                     {sector.name}
                   </h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed mb-5">
+                  <p className="text-[13px] text-white/[0.7] leading-relaxed mb-5">
                     {sector.description}
                   </p>
-                  <div className="flex items-center gap-1">
-                    <div className="h-[2px] w-0 bg-gold group-hover:w-6 transition-all duration-300" />
-                    <svg
-                      className="w-4 h-4 text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                  <span className="text-gold text-[14px] font-medium inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-250">
+                    &rarr;
+                  </span>
                 </Link>
               ))}
             </div>
@@ -316,17 +316,18 @@ export default function Home() {
       </section>
 
       {/* ── STATEMENT BAND ── */}
-      <section className="relative py-36 lg:py-48">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80')",
-          }}
+      <section className="relative" style={{ padding: "120px 40px" }}>
+        <Image
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80"
+          alt="Team working together"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
-        <div className="absolute inset-0 bg-navy/80" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="absolute inset-0 bg-[rgba(12,28,53,0.75)]" />
+        <div className="relative max-w-[800px] mx-auto text-center">
           <ScrollReveal>
-            <p className="font-serif italic text-[1.8rem] sm:text-[2.4rem] lg:text-[3rem] text-white leading-[1.2] font-semibold">
+            <p className="font-serif italic text-[42px] text-white leading-[1.2]">
               &ldquo;Regulation is not the obstacle. It is your competitive advantage.&rdquo;
             </p>
           </ScrollReveal>
@@ -337,8 +338,8 @@ export default function Home() {
       <section className="bg-cream py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="max-w-2xl mb-20">
-              <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-5">
+            <div className="max-w-2xl mb-16">
+              <h2 className="text-navy mb-5">
                 Everything you need to launch, operate and grow.
               </h2>
             </div>
@@ -349,15 +350,17 @@ export default function Home() {
                 <Link
                   key={service.name}
                   href={service.href}
-                  className="reveal group bg-white p-8 rounded-xl border border-transparent hover:border-gold/20 shadow-card hover:shadow-card-hover transition-all duration-300 relative overflow-hidden"
+                  className="reveal group bg-white p-8 rounded-lg shadow-card hover:shadow-card-hover transition-all duration-250 relative overflow-hidden border-l-[3px] border-l-transparent hover:border-l-gold"
                 >
-                  <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-transparent group-hover:bg-gold transition-colors duration-300" />
-                  <h3 className="text-[17px] font-bold text-navy group-hover:text-gold transition-colors mb-2">
+                  <h3 className="font-serif text-[22px] font-bold text-navy group-hover:text-gold transition-colors mb-2">
                     {service.name}
                   </h3>
-                  <p className="text-[15px] text-gray-500 leading-[1.7]">
+                  <p className="text-[15px] text-[#555] leading-[1.7] mb-4">
                     {service.description}
                   </p>
+                  <span className="text-gold text-[14px] font-medium inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    &rarr;
+                  </span>
                 </Link>
               ))}
             </div>
@@ -367,9 +370,9 @@ export default function Home() {
 
       {/* ── HOW WE WORK ── */}
       <ScrollReveal>
-        <section className="py-32 lg:py-40">
+        <section className="bg-white py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] text-center mb-24">
+            <h2 className="text-navy text-center mb-20">
               How We Work
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
@@ -379,14 +382,14 @@ export default function Home() {
                 { step: "03", title: "Comply", text: "We support your firm post-authorisation with ongoing compliance frameworks, monitoring and reporting." },
               ].map((item) => (
                 <div key={item.step} className="relative text-center">
-                  <span className="block font-serif text-[8rem] lg:text-[10rem] font-bold text-navy/[0.04] leading-none absolute top-[-2rem] left-1/2 -translate-x-1/2 select-none pointer-events-none">
+                  <span className="block font-serif text-[160px] font-bold text-[#F0EDE8] leading-none absolute top-[-2rem] left-1/2 -translate-x-1/2 select-none pointer-events-none">
                     {item.step}
                   </span>
-                  <div className="relative pt-12">
-                    <h3 className="font-serif text-[1.8rem] font-bold text-navy mb-4">
+                  <div className="relative pt-16">
+                    <h3 className="font-serif text-[24px] font-bold text-navy mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-[16px] text-gray-500 leading-[1.75]">
+                    <p className="text-[15px] text-[#555] leading-[1.7]">
                       {item.text}
                     </p>
                   </div>
@@ -401,19 +404,19 @@ export default function Home() {
       <section className="bg-cream py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] text-center mb-20">
+            <h2 className="text-navy text-center mb-16">
               What Our Clients Say
             </h2>
           </ScrollReveal>
           <ScrollReveal stagger>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
-                <figure key={i} className="reveal bg-white rounded-xl p-10 lg:p-12">
-                  <blockquote className="font-serif italic text-[18px] lg:text-[20px] text-navy leading-[1.6] mb-8">
+                <figure key={i} className="reveal bg-white rounded-lg p-8">
+                  <div className="h-[2px] w-10 bg-gold mb-4" />
+                  <blockquote className="font-serif italic text-[20px] text-[#1A1A1A] leading-[1.5] mb-6">
                     &lsquo;{t.quote}&rsquo;
                   </blockquote>
-                  <div className="h-[2px] w-10 bg-gold mb-5" />
-                  <figcaption className="text-[13px] font-medium text-gray-400 uppercase tracking-[0.05em]">
+                  <figcaption className="text-[14px] font-medium text-[#777] uppercase tracking-[0.05em]">
                     {t.attribution}
                   </figcaption>
                 </figure>
@@ -423,20 +426,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FULL-WIDTH PHOTO BAND ── */}
-      <section
-        className="h-[320px] lg:h-[420px] bg-cover bg-center"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80')",
-        }}
-      />
+      {/* ── EDITORIAL PHOTO BAND ── */}
+      <section className="relative h-[400px] w-full">
+        <Image
+          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=80"
+          alt="Business meeting"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </section>
 
       {/* ── INSIGHTS ── */}
       <ScrollReveal>
-        <section className="py-32 lg:py-40">
+        <section className="bg-white py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-16">
-              <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08]">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-14">
+              <h2 className="text-navy">
                 Latest Insights
               </h2>
               <Link
@@ -454,16 +460,17 @@ export default function Home() {
               {/* Hero insight card */}
               <Link
                 href="/insights"
-                className="group relative rounded-2xl overflow-hidden min-h-[400px] lg:min-h-full flex items-end"
+                className="group relative rounded-lg overflow-hidden min-h-[400px] lg:min-h-full flex items-end"
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                  style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80')",
-                  }}
+                <Image
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+                  alt="Financial documents"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
-                <div className="relative p-8 lg:p-12">
+                <div className="absolute inset-0 bg-[rgba(12,28,53,0.6)]" />
+                <div className="relative p-8 lg:p-10">
                   <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gold mb-3 block">
                     Regulatory Update
                   </span>
@@ -480,30 +487,30 @@ export default function Home() {
               <div className="grid grid-cols-1 gap-6">
                 <Link
                   href="/insights"
-                  className="group bg-cream rounded-2xl p-8 lg:p-12 hover:shadow-card transition-shadow duration-300"
+                  className="group bg-cream rounded-lg p-8 lg:p-10 hover:shadow-card transition-shadow duration-300"
                 >
                   <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gold mb-3 block">
                     Licensing Guide
                   </span>
-                  <h3 className="font-serif text-[1.4rem] lg:text-[1.6rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-serif text-[1.3rem] lg:text-[1.5rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
                     MiCA CASP Authorisation: The Complete Guide for Crypto Firms
                   </h3>
-                  <p className="text-[15px] text-gray-500 leading-relaxed">
+                  <p className="text-[15px] text-[#555] leading-relaxed">
                     Everything you need to know about obtaining a MiCA Crypto-Asset Service Provider licence in the European Union.
                   </p>
                 </Link>
 
                 <Link
                   href="/insights"
-                  className="group bg-cream rounded-2xl p-8 lg:p-12 hover:shadow-card transition-shadow duration-300"
+                  className="group bg-cream rounded-lg p-8 lg:p-10 hover:shadow-card transition-shadow duration-300"
                 >
                   <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gold mb-3 block">
                     International
                   </span>
-                  <h3 className="font-serif text-[1.4rem] lg:text-[1.6rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-serif text-[1.3rem] lg:text-[1.5rem] font-bold text-navy leading-tight mb-3 group-hover:text-gold transition-colors">
                     Canada MSB Registration: FINTRAC Requirements and Process
                   </h3>
-                  <p className="text-[15px] text-gray-500 leading-relaxed">
+                  <p className="text-[15px] text-[#555] leading-relaxed">
                     How to register as a Money Services Business in Canada and meet FINTRAC compliance obligations.
                   </p>
                 </Link>
@@ -517,20 +524,22 @@ export default function Home() {
       <section className="bg-navy py-32 lg:py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-white leading-[1.08] text-center mb-20">
+            <h2 className="text-white text-center mb-16">
               Global Reach
             </h2>
           </ScrollReveal>
           <ScrollReveal stagger>
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
-              {jurisdictions.map((j) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-0">
+              {jurisdictions.map((j, i) => (
                 <div
                   key={j.name}
-                  className="reveal text-center bg-white/[0.04] border border-white/[0.06] rounded-xl p-6 hover:bg-white/[0.08] transition-colors"
+                  className={`reveal text-center p-6 ${
+                    i < jurisdictions.length - 1 ? "border-r border-white/10" : ""
+                  }`}
                 >
-                  <span className="text-3xl block mb-3">{j.flag}</span>
+                  <span className="text-[28px] block mb-2">{j.flag}</span>
                   <h3 className="text-[14px] font-bold text-white mb-1">{j.name}</h3>
-                  <p className="text-[11px] text-white/40">{j.regulators}</p>
+                  <p className="text-[12px] text-white/60">{j.regulators}</p>
                 </div>
               ))}
             </div>
@@ -539,39 +548,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-32 lg:py-40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <ScrollReveal>
-            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-8">
-              Ready to launch your financial services business?
-            </h2>
-            <p className="text-[17px] text-gray-500 leading-[1.75] mb-12 max-w-xl mx-auto">
-              Get in touch to discuss how we can support your regulatory and compliance needs.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-navy text-white px-10 py-5 rounded text-[15px] font-semibold hover:bg-navy-light transition-colors"
-            >
-              Speak to an Expert
-            </Link>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-[14px] text-gray-400">
-              <a
-                href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
-                className="hover:text-navy transition-colors"
-              >
-                {contactInfo.phone}
-              </a>
-              <span className="hidden sm:inline text-gray-300">|</span>
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="hover:text-navy transition-colors"
-              >
-                {contactInfo.email}
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <ContactStrip />
     </>
   );
 }

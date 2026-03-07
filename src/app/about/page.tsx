@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import ContactStrip from "@/components/ContactStrip";
@@ -34,25 +35,27 @@ export default function AboutPage() {
     <>
       {/* Hero with background image */}
       <section className="relative bg-navy text-white py-32 lg:py-44 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80')",
-          }}
+        <Image
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80"
+          alt="Modern building"
+          fill
+          className="object-cover opacity-20"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="font-serif text-[3rem] lg:text-[4.5rem] font-bold leading-[1.05] mb-8">
+            <h1 className="text-white mb-8">
               Senior-led. <span className="italic text-gold">Founder-friendly.</span> Globally connected.
             </h1>
-            <p className="text-[17px] lg:text-[18px] text-white/60 leading-[1.8] mb-12 max-w-[560px]">
+            <p className="text-[17px] text-white/60 leading-[1.7] mb-10 max-w-[560px]">
               Specialist regulatory consulting for payment institutions, EMIs, crypto firms,
               banks and money services businesses &mdash; across the UK, EU and internationally.
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-gold text-white px-9 py-4.5 rounded text-[15px] font-semibold hover:bg-gold-light transition-colors"
+              className="inline-block bg-gold text-white px-8 py-3.5 rounded text-[15px] font-semibold hover:bg-gold-light transition-colors"
             >
               Speak to an Expert
             </Link>
@@ -62,17 +65,17 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <ScrollReveal>
-        <section className="py-32 lg:py-40">
+        <section className="bg-white py-32 lg:py-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               <div>
-                <span className="text-[12px] font-semibold uppercase tracking-[0.15em] text-gold mb-5 block">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.1em] text-gold mb-5 block">
                   Our Story
                 </span>
-                <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-8">
+                <h2 className="text-navy mb-8">
                   Built for founders. Trusted by institutions.
                 </h2>
-                <div className="space-y-6 text-[16px] text-gray-500 leading-[1.8]">
+                <div className="space-y-6 text-[16px] text-[#444] leading-[1.7]">
                   <p>
                     Founded by regulatory experts with deep roots in FCA authorisation and European
                     licensing, Regulatory Counsel was built on a simple principle: founders and growing
@@ -92,12 +95,15 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              <div
-                className="aspect-[4/5] rounded-2xl bg-cover bg-center"
-                style={{
-                  backgroundImage: "url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&q=80')",
-                }}
-              />
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80"
+                  alt="Team collaboration"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -107,8 +113,8 @@ export default function AboutPage() {
       <section className="py-32 lg:py-40 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="text-center mb-20">
-              <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08]">
+            <div className="text-center mb-16">
+              <h2 className="text-navy">
                 Why Choose Us
               </h2>
             </div>
@@ -116,11 +122,11 @@ export default function AboutPage() {
           <ScrollReveal stagger>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {values.map((v) => (
-                <div key={v.title} className="reveal bg-white rounded-xl p-10 lg:p-12 shadow-card">
-                  <h3 className="font-serif text-[1.5rem] lg:text-[1.8rem] font-bold text-navy mb-4">
+                <div key={v.title} className="reveal bg-white rounded-lg p-8 lg:p-10 shadow-card">
+                  <h3 className="font-serif text-[22px] font-bold text-navy mb-4">
                     {v.title}
                   </h3>
-                  <p className="text-[16px] text-gray-500 leading-[1.8]">{v.text}</p>
+                  <p className="text-[15px] text-[#555] leading-[1.7]">{v.text}</p>
                 </div>
               ))}
             </div>
@@ -139,11 +145,11 @@ export default function AboutPage() {
                 { value: "15+", label: "Jurisdictions" },
                 { value: "99%", label: "Success Rate" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="font-serif text-[3.5rem] lg:text-[4.5rem] font-bold text-gold leading-none">
+                <div key={stat.label} className="reveal text-center">
+                  <p className="font-serif text-[42px] font-bold text-gold leading-none">
                     {stat.value}
                   </p>
-                  <p className="text-[12px] text-white/40 mt-4 font-medium uppercase tracking-[0.12em]">
+                  <p className="text-[14px] text-white mt-4 font-medium uppercase tracking-[0.05em]">
                     {stat.label}
                   </p>
                 </div>
@@ -155,12 +161,12 @@ export default function AboutPage() {
 
       {/* Regulated & Professional */}
       <ScrollReveal>
-        <section className="py-32 lg:py-40">
+        <section className="bg-white py-32 lg:py-40">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-serif text-[2.4rem] lg:text-[3.2rem] font-bold text-navy leading-[1.08] mb-8">
+            <h2 className="text-navy mb-8">
               Regulated &amp; Professional
             </h2>
-            <p className="text-[16px] text-gray-500 leading-[1.8] max-w-2xl mx-auto">
+            <p className="text-[16px] text-[#444] leading-[1.7] max-w-2xl mx-auto">
               {contactInfo.company} is registered in England and Wales (No. 11642313).
               We operate from our London office at {contactInfo.address}. Our team brings
               together experienced regulatory professionals with backgrounds spanning the FCA,
